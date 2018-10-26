@@ -1,0 +1,14 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8000
+
+okta:
+  oauth2:
+    issuer: https://dev-217217.oktapreview.com/oauth2/default  
+    clientId: 0oagvd0smeDmGry5N0h7
+    scopes: 'email profile openid'

@@ -1,0 +1,27 @@
+type Greeting {
+  id: ID!
+  message: String!
+  comments: [Comment]
+}
+
+type Comment {
+  id: ID!
+  content: String!
+  greeting: Greeting
+}
+
+type Query {
+  getAllGreetings: [Greeting]
+  getGreeting(id: ID!): Greeting
+  getAllComments: [Comment]
+  getComment(id: ID!): Comment
+}
+
+type Mutation {
+  newGreeting(message: String!): Greeting!
+  updateGreeting(id: ID!, message: String!): Greeting
+  deleteGreeting(id: ID!): Greeting
+  newComment(id: ID!, content: String!): Comment
+  updateComment(id: ID!, content: String!): Comment
+  deleteComment(id: ID!): Comment
+}
